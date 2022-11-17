@@ -1,6 +1,10 @@
 const costBtn = document.querySelector('.cost-btn')
 const city = document.querySelector('#city')
 const nightNumber = document.querySelector('.nightNum')
+const container =document.querySelector('.container')
+const cost =document.querySelector('.cost')
+container.style.textAlign='center'
+cost.style.textAlign='center'
 
 function hotelCost(numNight) {
     let priceHotel = numNight * 140
@@ -9,20 +13,20 @@ function hotelCost(numNight) {
 
 function flightCost(city, numNight) {
     let priceFlight = city * numNight
-    if (numNight<=3) {
+    if (numNight <= 3) {
         return priceFlight
-    }else if(numNight>3){
-        return priceFlight - (priceFlight*0.1)
+    } else if (numNight > 3) {
+        return priceFlight - (priceFlight * 0.1)
     }
 }
 
 function rentalCost(numNight) {
     let priceRental = numNight * 40
-    if (numNight<3) {
+    if (numNight < 3) {
         return priceRental
-    }else if(numNight>=3 && numNight<7){
+    } else if (numNight >= 3 && numNight < 7) {
         return priceRental -= 20
-    }else if (numNight>=7){
+    } else if (numNight >= 7) {
         return priceRental -= 50
     }
 }
@@ -33,16 +37,16 @@ const costCarRentalResult = document.querySelector('.costCarRentalResult')
 const totalCostResult = document.querySelector('.totalCostResult')
 
 function calculateCost() {
-    costBtn.onclick=() => { 
+    costBtn.onclick = () => {
         let hotelCostValue = hotelCost(nightNumber.value)
-        let flightCostValue = flightCost((city.value)*1, nightNumber.value)
+        let flightCostValue = flightCost((city.value) * 1, nightNumber.value)
         let rentalCostValue = rentalCost(nightNumber.value)
 
         hotelCostResult.value = `${hotelCostValue}`
         travelCostResult.value = `${flightCostValue}`
         costCarRentalResult.value = `${rentalCostValue}`
 
-        let totalCostTravel = hotelCostValue+flightCostValue+rentalCostValue
+        let totalCostTravel = hotelCostValue + flightCostValue + rentalCostValue
         totalCostResult.value = `${totalCostTravel}`
     }
 }
