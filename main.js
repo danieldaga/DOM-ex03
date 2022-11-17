@@ -2,9 +2,11 @@ const costBtn = document.querySelector('.cost-btn')
 const city = document.querySelector('#city')
 const nightNumber = document.querySelector('.nightNum')
 const container =document.querySelector('.container')
-const cost =document.querySelector('.cost')
 container.style.textAlign='center'
-cost.style.textAlign='center'
+container.style.backgroundColor = '#B8D6D4'
+container.style.borderRadius = '20px'
+
+
 
 function hotelCost(numNight) {
     let priceHotel = numNight * 140
