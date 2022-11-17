@@ -27,8 +27,23 @@ function rentalCost(numNight) {
     }
 }
 
+const hotelCostResult = document.querySelector('.hotelCostResult')
+const travelCostResult = document.querySelector('.travelCostResult')
+const costCarRentalResult = document.querySelector('.costCarRentalResult')
+const totalCostResult = document.querySelector('.totalCostResult')
+
 function calculateCost() {
-    costBtn.onclick=() => {
-        
+    costBtn.onclick=() => { 
+        let hotelCostValue = hotelCost(nightNumber.value)
+        let flightCostValue = flightCost((city.value)*1, nightNumber.value)
+        let rentalCostValue = rentalCost(nightNumber.value)
+
+        hotelCostResult.value = `${hotelCostValue}`
+        travelCostResult.value = `${flightCostValue}`
+        costCarRentalResult.value = `${rentalCostValue}`
+
+        let totalCostTravel = hotelCostValue+flightCostValue+rentalCostValue
+        totalCostResult.value = `${totalCostTravel}`
     }
 }
+calculateCost()
