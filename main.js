@@ -2,6 +2,10 @@ const costBtn = document.querySelector('.cost-btn')
 const city = document.querySelector('#city')
 const nightNumber = document.querySelector('.nightNum')
 const container =document.querySelector('.container')
+const title = document.querySelector('h1')
+
+title.style.backgroundColor= '#DEE8E7'
+title.style.borderRadius= '20px'
 container.style.textAlign='center'
 container.style.backgroundColor = '#B8D6D4'
 container.style.borderRadius = '20px'
